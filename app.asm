@@ -6,7 +6,7 @@ section .data
     message_even db "Result is even", 0xA, 0
     message_odd db "Result is odd", 0xA, 0
     exit_msg db "Exiting program...", 0xA, 0
-    error_msg db "Invalid input. Please enter a number.", 0xA, 0
+    error_msg db "Invalid input. ", 0xA, 0
     exit_str db "exit", 0
 
 section .text
@@ -54,7 +54,7 @@ invalid_input:
     mov rax, 4               
     mov rdi, 1                 
     lea rsi, [error_msg]       
-    mov rdx, 34               
+    mov rdx, 15               
     syscall
     jmp main_loop           
 
